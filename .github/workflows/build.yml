@@ -8,6 +8,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ServerPerformance
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,6 +29,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ServerPerformance-Forge-1.20.1
-          path: build/libs/*.jar
+          path: ServerPerformance/build/libs/*.jar
           if-no-files-found: error
           retention-days: 30

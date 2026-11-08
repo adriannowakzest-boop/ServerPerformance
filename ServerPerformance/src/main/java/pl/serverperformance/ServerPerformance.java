@@ -195,7 +195,7 @@ public class ServerPerformance {
         String loadText = load < 0 ? "niedostępne" : String.format(Locale.ROOT, "%.2f", load);
 
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
-        Path dir = server.getServerDirectory().resolve("performance-reports");
+        Path dir = Path.of(server.getServerDirectory().getPath()).resolve("performance-reports");
         Path txt = dir.resolve("performance-" + timestamp + ".txt");
         Path csv = dir.resolve("performance-" + timestamp + ".csv");
         try {
